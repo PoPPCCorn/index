@@ -6,14 +6,14 @@
   <title>DGIST 포춘 붕어빵</title>
   <style>
     :root{
-      --bg1:#2563eb;
-      --bg2:#7dd3fc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#64748b;
+      --bg1:#dbeafe;
+      --bg2:#eff6ff;
+      --text:#172554;
+      --line:#bfdbfe;
+      --soft:#f8fbff;
       --accent:#f59e0b;
-      --line:#e2e8f0;
-      --soft:#f8fafc;
+      --line:#bfdbfe;
+      --soft:#f8fbff;
     }
     *{box-sizing:border-box}
     body{
@@ -21,7 +21,7 @@
       font-family:"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
       min-height:100vh;
       background:linear-gradient(135deg, var(--bg1), var(--bg2));
-      color:white;
+      color:#172554;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -40,16 +40,16 @@
     }
     .hero p{
       margin:0;
-      color:#cbd5e1;
+      color:#3b82f6;
       font-size:clamp(14px,2vw,17px);
     }
     .card{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.55);
+      border:1px solid rgba(147,197,253,0.6);
       backdrop-filter:blur(12px);
       border-radius:28px;
       padding:20px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.28);
+      box-shadow:0 20px 60px rgba(37,99,235,0.18);
     }
     .screen{
       display:none;
@@ -77,14 +77,16 @@
       margin-bottom:12px;
       border:1px solid #fed7aa;
     }
-    .cookie-zone{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:18px;
-      min-height:592px;
-      text-align:center;
+    .badge{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:12px;
+      border:1px solid #bfdbfe;
     }
     .input-box{
       width:min(420px, 100%);
@@ -376,7 +378,7 @@
       <section class="screen" id="resultScreen">
         <div class="panel">
           <div class="result-top">
-            <span class="badge" style="background:#fff1f2;color:#9f1239;border-color:#fecdd3;">오늘의 DGIST 포춘</span>
+            <span class="badge">오늘의 DGIST 포춘</span>
             <h2 id="title">이름과 생일을 입력해보세요</h2>
             <p id="subtitle">입력값을 기준으로 오늘의 포춘이 정해집니다.</p>
           </div>
