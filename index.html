@@ -339,8 +339,8 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:radial-gradient(circle, #fff7ed 0%, #ffedd5 48%, #fed7aa 100%);
-      box-shadow:0 22px 60px rgba(249,115,22,0.22);
+      background:radial-gradient(circle, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+      box-shadow:0 22px 60px rgba(22, 60, 249, 0.22);
       animation:floatCookie 1.4s ease-in-out infinite;
       position:relative;
     }
@@ -349,7 +349,7 @@
       content:"";
       position:absolute;
       border-radius:999px;
-      background:#fb923c;
+      background:#3ccbfb;
       opacity:.16;
       animation:pulseRing 1.4s ease-out infinite;
     }
@@ -358,7 +358,7 @@
     .loading-cookie svg{
       width:68%;
       height:68%;
-      filter:drop-shadow(0 12px 16px rgba(249,115,22,0.24));
+      filter:drop-shadow(0 12px 16px rgba(22, 128, 249, 0.24));
       z-index:1;
     }
     .loading-text h3{
@@ -381,8 +381,8 @@
       padding:9px 13px;
       border-radius:999px;
       background:#fff7ed;
-      border:1px solid #fed7aa;
-      color:#9a3412;
+      border:1px solid #aacafe;
+      color:#12229a;
       font-size:13px;
       font-weight:800;
     }
@@ -391,7 +391,7 @@
       width:5px;
       height:5px;
       border-radius:999px;
-      background:#f97316;
+      background:#1684f9;
       animation:bounceDot .8s infinite ease-in-out;
     }
     .loading-dots span:nth-child(2){animation-delay:.12s;}
@@ -401,15 +401,15 @@
       height:10px;
       border-radius:999px;
       overflow:hidden;
-      background:#ffedd5;
-      border:1px solid #fed7aa;
+      background:#d5f0ff;
+      border:1px solid #aae6fe;
     }
     .loading-progress span{
       display:block;
       height:100%;
       width:42%;
       border-radius:999px;
-      background:linear-gradient(135deg, #f59e0b, #f97316);
+      background:linear-gradient(135deg, #0ba7f5, #1687f9);
       animation:progressMove 1.15s ease-in-out infinite;
     }
     @keyframes floatCookie{
@@ -485,7 +485,7 @@
             </div>
 
             <div id="cookie" class="cookie" title="클릭해서 포춘 열기" aria-label="포춘 붕어빵 열기">
-              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <img src="https://raw.githubusercontent.com/Kurtis73/image/main/붕어빵.png" style="width:100%; height:100%; object-fit:contain;">>
                 <defs>
                   <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stop-color="#fbbf24"/>
@@ -524,7 +524,7 @@
             </div>
 
             <div class="loading-cookie" aria-hidden="true">
-              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <img src="https://raw.githubusercontent.com/Kurtis73/image/main/달구.png" style="width:100%; height:100%; object-fit:contain; z-index:2;">
                 <defs>
                   <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stop-color="#fbbf24"/>
@@ -563,6 +563,7 @@
               <div class="fortune-label">오늘의 장소</div>
               <div class="fortune-value" id="place">—</div>
               <div class="fortune-sub" id="placeSub">포춘을 열면 추천 장소가 표시됩니다.</div>
+              <img id="placeImg" style="width:60%; display:block; margin-top:10px; border-radius:12px;">
             </div>
             <div class="fortune-item">
               <div class="fortune-label">오늘의 메뉴</div>
@@ -615,14 +616,14 @@
           "오늘의 추천은 오늘만의 조합으로 정해졌어요."
         ],
         places: [
-          ["학술정보관 구석진 자리", "짧게 몰입하며 책이나 자료를 읽어보세요."],
-          ["도서관 조용한 자리", "집중이 필요한 오늘에 잘 어울려요."],
-          ["학술정보관 테이블", "과제나 공부를 하기 좋은 날이에요."],
-          ["E16 앞 농구장", "가볍게 몸을 풀며 리프레시해보세요."],
-          ["팬도로시 야외 테이블", "햇볕 받으며 잠깐 쉬기 좋아요."],
-          ["햇빛이 잘 드는 파란 소파", "편하게 앉아 여유를 느껴보세요."],
-          ["해동창의마루 Co-Work Cube", "조용히 앉아 생각을 정리하기 좋아요."],
-          ["기숙사 체력단련실", "가볍게 운동하며 컨디션을 챙겨보세요."]
+          ["학술정보관 구석진 자리", "짧게 몰입하며 책이나 자료를 읽어보세요.", "https://placehold.co/900x520/dbeafe/172554?text=DGIST+Library"],
+          ["도서관 조용한 자리", "집중이 필요한 오늘에 잘 어울려요.", "https://placehold.co/900x520/e0f2fe/172554?text=Quiet+Library+Seat"],
+          ["학술정보관 테이블", "과제나 공부를 하기 좋은 날이에요.", "https://placehold.co/900x520/f0f9ff/172554?text=Library+Table"],
+          ["E16 앞 농구장", "가볍게 몸을 풀며 리프레시해보세요.", "https://raw.githubusercontent.com/Kurtis73/image/main/Basket.jpg"],
+          ["팬도로시 야외 테이블", "햇볕 받으며 잠깐 쉬기 좋아요.", ""],
+          ["햇빛이 잘 드는 파란 소파", "편하게 앉아 여유를 느껴보세요.", "https://placehold.co/900x520/dbeafe/1e3a8a?text=Blue+Sofa"],
+          ["해동창의마루 Co-Work Cube", "조용히 앉아 생각을 정리하기 좋아요.", "https://placehold.co/900x520/fae8ff/581c87?text=Co-Work+Cube"],
+          ["기숙사 체력단련실", "가볍게 운동하며 컨디션을 챙겨보세요.", "https://placehold.co/900x520/f1f5f9/0f172a?text=Fitness+Room"]
         ],
         menus: [
           ["든든한 학식", "오늘처럼 긴 하루엔 밥심이 필요해요."],
@@ -670,12 +671,12 @@
           "오늘의 추천은 방문자 기준으로 정해졌어요."
         ],
         places: [
-          ["캠퍼스 산책길", "가볍게 걸으며 DGIST 분위기를 느껴보세요."],
-          ["학술정보관 앞", "조용하고 차분한 캠퍼스 감성이 잘 느껴져요."],
-          ["팬도로시 근처", "커피 한잔하며 쉬어가기 좋아요."],
-          ["해동창의마루 주변", "DGIST의 창의적인 분위기를 보기 좋아요."],
-          ["잔디광장", "잠깐 머물며 여유를 느껴보세요."],
-          ["포토존이 될 만한 캠퍼스 공간", "오늘의 방문을 사진으로 남겨보세요."]
+          ["캠퍼스 산책길", "가볍게 걸으며 DGIST 분위기를 느껴보세요.", "https://placehold.co/900x520/dcfce7/14532d?text=Campus+Walkway"],
+          ["학술정보관 앞", "조용하고 차분한 캠퍼스 감성이 잘 느껴져요.", "https://placehold.co/900x520/e0f2fe/172554?text=Library+Front"],
+          ["팬도로시 근처", "커피 한잔하며 쉬어가기 좋아요.", "https://placehold.co/900x520/fef3c7/7c2d12?text=Pandorothy"],
+          ["해동창의마루 주변", "DGIST의 창의적인 분위기를 보기 좋아요.", "https://placehold.co/900x520/fae8ff/581c87?text=Haedong+Creative+Maru"],
+          ["잔디광장", "잠깐 머물며 여유를 느껴보세요.", "https://placehold.co/900x520/dcfce7/14532d?text=Grass+Square"],
+          ["포토존이 될 만한 캠퍼스 공간", "오늘의 방문을 사진으로 남겨보세요.", "https://placehold.co/900x520/fce7f3/831843?text=Campus+Photo+Spot"]
         ],
         menus: [
           ["시원한 아메리카노", "가볍게 들고 캠퍼스를 둘러보기 좋아요."],
@@ -799,6 +800,7 @@
       document.getElementById("subtitle").textContent = subtitle;
       document.getElementById("place").textContent = place[0];
       document.getElementById("placeSub").textContent = place[1];
+      document.getElementById("placeImg").src = place[2];
       document.getElementById("menu").textContent = menu[0];
       document.getElementById("menuSub").textContent = menu[1];
       document.getElementById("mission").textContent = mission[0];
