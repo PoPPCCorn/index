@@ -746,7 +746,7 @@
     }
 
     function normalizeBirth(birth){
-      return birth.trim().replace(/[./]/g, "-");
+      return birth.trim().replace(/\D/g, "");
     }
 
     function getStudentType(){
