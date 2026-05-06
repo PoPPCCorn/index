@@ -540,7 +540,7 @@
 
             <div class="loading-text">
               <h3>달구가 오늘의 붕어빵을 굽고 있어요</h3>
-              <p>이름, 생일, 오늘 날짜를 섞어<br/>딱 오늘만의 포춘을 만드는 중입니다.</p>
+              <p>이름, 생일, 오늘의 날짜를 섞어<br/>오늘만의 포춘을 만드는 중입니다.</p>
             </div>
 
             <div class="loading-progress" aria-hidden="true"><span></span></div>
@@ -553,17 +553,14 @@
           <div class="result-top">
             <span class="badge">오늘의 DGIST 포춘</span>
             <h2 id="title">이름과 생일을 입력해보세요</h2>
-            <p id="subtitle">입력값을 기준으로 오늘의 포춘이 정해집니다.</p>
           </div>
-
-          <div class="seed-info" id="seedInfo">아직 포춘이 열리지 않았어요.</div>
 
           <div class="fortune-grid">
             <div class="fortune-item">
               <div class="fortune-label">오늘의 장소</div>
               <div class="fortune-value" id="place">—</div>
               <div class="fortune-sub" id="placeSub">포춘을 열면 추천 장소가 표시됩니다.</div>
-              <img id="placeImg" style="width:60%; display:block; margin-top:10px; border-radius:12px;">
+              <img id="placeImg" style="width:60%; display:block; margin:10px auto 0; border-radius:12px;">
             </div>
             <div class="fortune-item">
               <div class="fortune-label">오늘의 메뉴</div>
@@ -588,12 +585,9 @@
 
           <div class="actions result-actions">
             <button class="secondary" id="backBtn">다시 입력하기</button>
-            <button class="secondary" id="copyBtn">결과 복사</button>
             <button class="secondary" id="saveImageBtn">이미지 저장</button>
             <button class="secondary" id="shareBtn">친구에게 공유</button>
           </div>
-          <div class="copy-ok" id="copyMsg"></div>
-          <div class="small">기획서 용 샘플 페이지</div>
         </div>
       </section>
     </div>
@@ -604,16 +598,7 @@
     const data = {
       student: {
         titles: [
-          "오늘의 DGIST 포춘이 도착했어요",
-          "오늘은 이런 캠퍼스 하루가 어울려요",
-          "포춘 붕어빵이 추천하는 오늘의 DGIST 루트",
-          "오늘의 캠퍼스 무드는 이쪽이에요"
-        ],
-        subtitles: [
-          "가볍게 참고하고 오늘 하루를 즐겨보세요.",
-          "DGIST 캠퍼스 라이프를 기준으로 추천해드릴게요.",
-          "오늘은 작은 미션 하나만 실천해도 충분해요.",
-          "오늘의 추천은 오늘만의 조합으로 정해졌어요."
+          "오늘의 DGIST 포춘 붕어빵이 도착했어요",
         ],
         places: [
           ["학술정보관 일반 열람실 📚", "조용한 분위기에서 집중하기 좋은 날입니다. 방해받지 않고 공부해 보는 건 어떨까요?", "https://raw.githubusercontent.com/Kurtis73/image/main/일반열람실.jpg"],
@@ -667,16 +652,7 @@
       },
       guest: {
         titles: [
-          "오늘의 DGIST 포춘이 도착했어요",
-          "오늘은 이런 캠퍼스 하루가 어울려요",
-          "포춘 붕어빵이 추천하는 오늘의 DGIST 루트",
-          "오늘의 캠퍼스 무드는 이쪽이에요"
-        ],
-        subtitles: [
-          "가볍게 참고하고 오늘 하루를 즐겨보세요.",
-          "DGIST 캠퍼스 라이프를 기준으로 추천해드릴게요.",
-          "오늘은 작은 미션 하나만 실천해도 충분해요.",
-          "오늘의 추천은 오늘만의 조합으로 정해졌어요."
+          "오늘의 DGIST 포춘 붕어빵이 도착했어요",
         ],
         places: [
           ["조용한 도서관이나 카페 📚", "집중할 수 있는 공간에서 방해받지 않고 몰입하기 좋은 날입니다. 차분하게 집중해 보는 건 어떨까요?", "https://raw.githubusercontent.com/Kurtis73/image/main/일반열람실.jpg"],
@@ -814,16 +790,13 @@
       const currentData = studentType === "yes" ? data.student : data.guest;
 
       const title = pickDeterministic(currentData.titles, seedBase, "title");
-      const subtitle = pickDeterministic(currentData.subtitles, seedBase, "subtitle");
       const place = pickDeterministic(currentData.places, seedBase, "place");
       const menu = pickDeterministic(currentData.menus, seedBase, "menu");
       const mission = pickDeterministic(currentData.missions, seedBase, "mission");
       const quote = pickDeterministic(currentData.quotes, seedBase, "quote");
       const bonus = pickDeterministic(currentData.bonus, seedBase, "bonus");
 
-      document.getElementById("title").textContent = title;
-      document.getElementById("subtitle").textContent = subtitle;
-      document.getElementById("place").textContent = place[0];
+      document.getElementById("title").textContent = `${name}님의 ${title}`;      document.getElementById("place").textContent = place[0];
       document.getElementById("placeSub").textContent = place[1];
       document.getElementById("placeImg").src = place[2];
       document.getElementById("menu").textContent = menu[0];
@@ -833,8 +806,6 @@
       document.getElementById("quote").textContent = quote[0];
       document.getElementById("quoteSub").textContent = quote[1];
       document.getElementById("bonusText").textContent = bonus;
-      document.getElementById("seedInfo").innerHTML =
-        `<strong>${name}</strong>님의 오늘 포춘은 <strong>${today}</strong> 기준으로 만들어졌어요. 생일 <strong>${birth}</strong> · <strong>${studentType === "yes" ? "재학생" : "비재학생"}</strong> 기준입니다.`;
     }
 
     function openFortune(){
@@ -862,7 +833,6 @@
       cookie.classList.add("open");
 
       setStatus("", false);
-      document.getElementById("copyMsg").textContent = "";
       setLoadingState(true);
       showScreen("loadingScreen");
 
@@ -871,33 +841,6 @@
         setLoadingState(false);
         showScreen("resultScreen");
       }, 1400);
-    }
-
-    async function copyResult(){
-      const name = normalizeName(document.getElementById("nameInput").value);
-      const birth = normalizeBirth(document.getElementById("birthInput").value);
-      const today = getTodayKey();
-      const studentType = getStudentType();
-
-      const lines = [
-        "[DGIST 포춘 붕어빵]",
-        `${name || "이름 미입력"} / ${birth || "생일 미입력"} / ${studentType === "yes" ? "재학생" : "비재학생"} / ${today}`,
-        document.getElementById("title").textContent,
-        "",
-        "오늘의 장소: " + document.getElementById("place").textContent,
-        "오늘의 메뉴: " + document.getElementById("menu").textContent,
-        "오늘의 미션: " + document.getElementById("mission").textContent,
-        "오늘의 한마디: " + document.getElementById("quote").textContent,
-        "",
-        document.getElementById("bonusText").textContent
-      ].join("\n");
-
-      try{
-        await navigator.clipboard.writeText(lines);
-        document.getElementById("copyMsg").textContent = "결과가 복사됐어요.";
-      }catch(e){
-        document.getElementById("copyMsg").textContent = "복사는 브라우저 환경에 따라 제한될 수 있어요.";
-      }
     }
 
     async function saveResultImage(){
@@ -1012,7 +955,6 @@
 
     document.getElementById("openBtn").addEventListener("click", openFortune);
     document.getElementById("cookie").addEventListener("click", openFortune);
-    document.getElementById("copyBtn").addEventListener("click", copyResult);
     document.getElementById("saveImageBtn").addEventListener("click", saveResultImage);
     document.getElementById("shareBtn").addEventListener("click", shareResult);
     document.getElementById("backBtn").addEventListener("click", () => {
